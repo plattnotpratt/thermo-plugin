@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) { exit; }
 
 // Define paths
 if (!defined('THERMO_URL')) { define('THERMO_URL', plugin_dir_url(__FILE__)); }
-if (!defined('THERMO_VER')) { define('THERMO_VER', '1.1.0'); }
+if (!defined('THERMO_VER')) { define('THERMO_VER', '0.0.1'); }
 
 // ---- Options (site-wide) ----------------------------------------------------
 function thermo_default_options() {
@@ -117,8 +117,8 @@ function thermo_field_fill_to() { $o = thermo_get_options(); ?>
 // ---- Assets -----------------------------------------------------------------
 function thermo_enqueue_assets() {
     $opts = thermo_get_options();
+    echo THERMO_URL;
     wp_enqueue_style('thermo-css', THERMO_URL . 'assets/thermometer.css', [], THERMO_VER);
-    // Inject site-wide gradient colors as CSS variables
     $inline = ":root{--thermo-fill-from: {$opts['fill_from']}; --thermo-fill-to: {$opts['fill_to']};}";
     wp_add_inline_style('thermo-css', $inline);
     wp_enqueue_script('thermo-js', THERMO_URL . 'assets/thermometer.js', [], THERMO_VER, true);
