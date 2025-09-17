@@ -1,5 +1,5 @@
 /* Container */
-.sh-thermo {
+.thermo {
   --bar-height: 20px; /* tweak as needed */
   --bar-bg: #e9ecef;
   --bar-fill: linear-gradient(90deg, #5b9cff, #3ac8a8);
@@ -10,14 +10,14 @@
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
-.sh-thermo-title {
+.thermo-title {
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--text);
 }
 
 /* Pill bar */
-.sh-thermo-bar {
+.thermo-bar {
   position: relative;
   height: var(--bar-height);
   background: var(--bar-bg);
@@ -25,7 +25,7 @@
   overflow: hidden;
 }
 
-.sh-thermo-fill {
+.thermo-fill {
   position: absolute;
   inset: 0 auto 0 0;
   width: 0%;
@@ -35,14 +35,14 @@
 }
 
 /* Milestones */
-.sh-thermo-marker {
+.thermo-marker {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
-.sh-thermo-marker-dot {
+.thermo-marker-dot {
   display: block;
   width: 12px;
   height: 12px;
@@ -52,11 +52,11 @@
   box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
 }
 
-.sh-thermo-marker.met .sh-thermo-marker-dot {
+.thermo-marker.met .thermo-marker-dot {
   background: var(--marker-met);
 }
 
-.sh-thermo-marker-label {
+.thermo-marker-label {
   position: absolute;
   top: calc(100% + 8px);
   white-space: nowrap;
@@ -66,14 +66,14 @@
 }
 
 /* Legend */
-.sh-thermo-legend {
+.thermo-legend {
   margin-top: 8px;
   font-size: 14px;
   color: var(--text);
 }
-.sh-thermo-legend .sh-thermo-sep { color: var(--muted); margin: 0 4px; }
+.thermo-legend .thermo-sep { color: var(--muted); margin: 0 4px; }
 
 /* Larger on big screens */
 @media (min-width: 640px) {
-  .sh-thermo { --bar-height: 24px; }
+  .thermo { --bar-height: 24px; }
 }
