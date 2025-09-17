@@ -1,0 +1,79 @@
+/* Container */
+.sh-thermo {
+  --bar-height: 20px; /* tweak as needed */
+  --bar-bg: #e9ecef;
+  --bar-fill: linear-gradient(90deg, #5b9cff, #3ac8a8);
+  --marker-color: #6c757d;
+  --marker-met: #16a34a;
+  --text: #111827;
+  --muted: #6b7280;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.sh-thermo-title {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Pill bar */
+.sh-thermo-bar {
+  position: relative;
+  height: var(--bar-height);
+  background: var(--bar-bg);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.sh-thermo-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  background: var(--bar-fill);
+  border-radius: 9999px;
+  transition: width 900ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* Milestones */
+.sh-thermo-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.sh-thermo-marker-dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: var(--marker-color);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+.sh-thermo-marker.met .sh-thermo-marker-dot {
+  background: var(--marker-met);
+}
+
+.sh-thermo-marker-label {
+  position: absolute;
+  top: calc(100% + 8px);
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--muted);
+  transform: translateX(-50%);
+}
+
+/* Legend */
+.sh-thermo-legend {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--text);
+}
+.sh-thermo-legend .sh-thermo-sep { color: var(--muted); margin: 0 4px; }
+
+/* Larger on big screens */
+@media (min-width: 640px) {
+  .sh-thermo { --bar-height: 24px; }
+}
